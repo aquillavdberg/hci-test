@@ -114,20 +114,35 @@ public class BodySourceView : MonoBehaviour
         
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {
+            
             if (jt == Kinect.JointType.HandLeft)
             {
                 GameObject jointObj = GameObject.Instantiate(HandPrefab);
                 // vervolgstap kan zijn 2e hand prefab te maken voor rechter hand met een ander effect op de button o.i.d.?
+                LineRenderer lr = jointObj.AddComponent<LineRenderer>();
+                lr.SetVertexCount(2);
+                lr.material = BoneMaterial;
+                lr.SetWidth(0.05f, 0.05f);
+                
+                jointObj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                jointObj.name = jt.ToString();
+                jointObj.transform.parent = body.transform;
+
+            }
+            else
+            {
+                GameObject jointObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                LineRenderer lr = jointObj.AddComponent<LineRenderer>();
+                lr.SetVertexCount(2);
+                lr.material = BoneMaterial;
+                lr.SetWidth(0.05f, 0.05f);
+                
+                jointObj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                jointObj.name = jt.ToString();
+                jointObj.transform.parent = body.transform;
             }
             
-            LineRenderer lr = jointObj.AddComponent<LineRenderer>();
-            lr.SetVertexCount(2);
-            lr.material = BoneMaterial;
-            lr.SetWidth(0.05f, 0.05f);
-            
-            jointObj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-            jointObj.name = jt.ToString();
-            jointObj.transform.parent = body.transform;
+
         }
      
 
