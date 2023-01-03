@@ -114,7 +114,11 @@ public class BodySourceView : MonoBehaviour
         
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {
-            GameObject jointObj = GameObject.Instantiate(HandPrefab);
+            if (jt == Kinect.JointType.HandLeft)
+            {
+                GameObject jointObj = GameObject.Instantiate(HandPrefab);
+                // vervolgstap kan zijn 2e hand prefab te maken voor rechter hand met een ander effect op de button o.i.d.?
+            }
             
             LineRenderer lr = jointObj.AddComponent<LineRenderer>();
             lr.SetVertexCount(2);
