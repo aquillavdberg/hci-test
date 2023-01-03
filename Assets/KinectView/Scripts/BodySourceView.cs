@@ -7,6 +7,7 @@ public class BodySourceView : MonoBehaviour
 {
     public Material BoneMaterial;
     public GameObject BodySourceManager;
+    public GameObject HandPrefab;
     
     private Dictionary<ulong, GameObject> _Bodies = new Dictionary<ulong, GameObject>();
     private BodySourceManager _BodyManager;
@@ -113,7 +114,7 @@ public class BodySourceView : MonoBehaviour
         
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {
-            GameObject jointObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            GameObject jointObj = GameObject.Instantiate(HandPrefab);
             
             LineRenderer lr = jointObj.AddComponent<LineRenderer>();
             lr.SetVertexCount(2);
@@ -124,7 +125,8 @@ public class BodySourceView : MonoBehaviour
             jointObj.name = jt.ToString();
             jointObj.transform.parent = body.transform;
         }
-        
+     
+
         return body;
     }
     
