@@ -21,23 +21,15 @@ public class ButtonPressing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.name);
-        //Destroy(this.gameObject);
+      
+        Destroy(this.gameObject);
     }
 
-    IEnumerator DoWait()
-    {
-        Debug.Log("Start wait");
-        if (waitForSecondsRealtime == null)
-            waitForSecondsRealtime = new WaitForSecondsRealtime(waitTime);
-        else
-            waitForSecondsRealtime.waitTime = waitTime;
-        yield return waitForSecondsRealtime;
-    }
+   
+   
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Staying");
-        StartCoroutine("DoWait");
+       
         Destroy(this.gameObject);
     }
 }
