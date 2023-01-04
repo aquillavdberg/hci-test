@@ -23,6 +23,10 @@ public class ButtonPressing : MonoBehaviour
     {
       
         Destroy(this.gameObject);
+        Debug.Log("Enter");
+        Debug.Log(this.gameObject);
+        // if (this.gameobject == yes) {next scene}
+        // else {previous scene o.i.d.}
     }
 
    
@@ -31,5 +35,8 @@ public class ButtonPressing : MonoBehaviour
     {
        
         Destroy(this.gameObject);
+        Debug.Log("Stay");
+        Debug.Log(this.gameObject);
+        // deze wordt nooit geraakt want de button verdwijnt atm gelijk
     }
 }
