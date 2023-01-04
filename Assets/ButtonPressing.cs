@@ -22,7 +22,7 @@ public class ButtonPressing : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
       
-        Destroy(this.gameObject);
+        // Destroy(this.gameObject);
         Debug.Log("Enter");
         Debug.Log(this.gameObject);
         // if (this.gameobject == yes) {next scene}
@@ -34,9 +34,11 @@ public class ButtonPressing : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
        
-        Destroy(this.gameObject);
+        // Destroy(this.gameObject);
         Debug.Log("Stay");
         Debug.Log(this.gameObject);
         // deze wordt nooit geraakt want de button verdwijnt atm gelijk
     }
 }
+
+// meer collissionboxen + tag checker of de correcte joint colide
