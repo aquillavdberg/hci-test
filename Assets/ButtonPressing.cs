@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static BodySourceView;
 
 public class ButtonPressing : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class ButtonPressing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Start");
         // if this.gameobject == "jointcollider": gebruik basic sprite
         // misschien zelfs niet nodig, gebruik prefab voor de jointcolliders?
     }
@@ -28,7 +28,16 @@ public class ButtonPressing : MonoBehaviour
       
         // Destroy(this.gameObject);
         Debug.Log("Enter");
-        Debug.Log(this.gameObject);
+        Debug.Log(gameObject);
+
+        Debug.Log("BodySourceView.jointObj");
+        foreach (GameObject i in BodySourceView.joints)
+            {
+            Debug.Log(i);
+            }
+        
+
+        
         // if (this.gameobject == "yes") {next scene}
         // if (this.gameobject == "no") {previous scene o.i.d.}
     }
@@ -37,11 +46,10 @@ public class ButtonPressing : MonoBehaviour
    
     private void OnTriggerStay2D(Collider2D collision)
     {
-       
-        // Destroy(this.gameObject);
-        Debug.Log("Stay");
-        Debug.Log(this.gameObject);
-        // deze wordt nooit geraakt want de button verdwijnt atm gelijk
+        // Debug.Log("Stay");
+        // Debug.Log(this.gameObject);
+        // Debug.Log(gameObject);
+
         // if this.gameobject == "jointcollider" && tag == correcte joint: 
             // {gebruik fancy sprite
             // @ dict this.gameobject = true
