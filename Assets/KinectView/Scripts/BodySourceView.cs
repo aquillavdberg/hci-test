@@ -9,11 +9,66 @@ public class BodySourceView : MonoBehaviour
     public Material BoneMaterial;
     public GameObject BodySourceManager;
     public GameObject HandPrefab;
+    public GameObject JointColliderPrefab;
+
     public static HashSet<GameObject> joints = new HashSet<GameObject>();
+    public static Dictionary<GameObject, bool > jointCollided = new Dictionary < GameObject, bool > ();
+    public static Dictionary<string, int[] > jointColliderPos = new Dictionary < string, int[] > ();
     
     private Dictionary<ulong, GameObject> _Bodies = new Dictionary<ulong, GameObject>();
     private BodySourceManager _BodyManager;
-    
+
+
+
+    public void poseDict()
+    {
+        int[] vector = {0, 0, 0};        
+        for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
+        {
+            // debug: blijft steeds lopen en probeerd steeds joints toe te voegen die er al zijn. gebruik try en catch? of gebruik de joints hashmap?
+            // alle colliders worden wel gemaakt maar ver buiten frame, afmetingen van de vector aanpassen?
+            // nog maken ontrigger, change colour
+            Debug.Log("creating jointcollider x joint collider pos");
+            Debug.Log(jt.ToString());
+
+            try
+            {
+            jointColliderPos.Add(jt.ToString(), vector);
+            vector[0] = vector[0] + 1;
+            vector[1] = vector[1] + 1;
+            vector[2] = vector[2] + 1;
+
+            }
+            catch
+            {
+            
+            }
+        }
+    }    
+    public void createJointCollider()
+    {    
+        Debug.Log("creat joint colliders");
+        for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
+        {   
+            GameObject Colliderbody = new GameObject("collider"+jt);
+                GameObject jointCollider = GameObject.Instantiate(JointColliderPrefab);
+                LineRenderer lr = jointCollider.AddComponent<LineRenderer>();
+                lr.SetVertexCount(2);
+                lr.material = BoneMaterial;
+                lr.SetWidth(0.05f, 0.05f);
+
+                jointCollider.transform.position = new Vector3(jointColliderPos[jt.ToString()][0], jointColliderPos[jt.ToString()][1], jointColliderPos[jt.ToString()][2]);
+                jointCollider.transform.localScale = new Vector3(3f, 6f, 3f);
+                jointCollider.name = jt.ToString();
+                jointCollider.transform.parent = Colliderbody.transform;
+
+                // jointsCollider.Add(jointCollider);
+                
+                Debug.Log("jointcollider gemaakt:");
+                Debug.Log(jointCollider);
+                jointCollided.Add(jointCollider, false);
+        }
+    }
     private Dictionary<Kinect.JointType, Kinect.JointType> _BoneMap = new Dictionary<Kinect.JointType, Kinect.JointType>()
     {
         { Kinect.JointType.FootLeft, Kinect.JointType.AnkleLeft },
@@ -48,6 +103,20 @@ public class BodySourceView : MonoBehaviour
     
     void Update () 
     {
+        int count = 0;
+        if (count == 0)
+        { poseDict();}
+        count += 1;
+        
+
+        if (jointCollided.Count < 1)
+        {
+            Debug.Log("if empty dict");
+            createJointCollider();
+        }
+
+        
+
         if (BodySourceManager == null)
         {
             return;
@@ -116,7 +185,6 @@ public class BodySourceView : MonoBehaviour
         
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {   
-// nu zijn alle jointtypes colliders
                 GameObject jointObj = GameObject.Instantiate(HandPrefab);
                 LineRenderer lr = jointObj.AddComponent<LineRenderer>();
                 lr.SetVertexCount(2);

@@ -5,6 +5,7 @@ using static BodySourceView;
 
 public class ButtonPressing : MonoBehaviour
 {
+    SpriteRenderer sprite;
     public float waitTime;
     WaitForSecondsRealtime waitForSecondsRealtime;
 
@@ -25,21 +26,23 @@ public class ButtonPressing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-      
-        // Destroy(this.gameObject);
-        Debug.Log("Enter");
-        Debug.Log(gameObject);
+        // Debug.Log("Enter"+ this.gameObject.name);
 
-        Debug.Log("BodySourceView.jointObj");
-        foreach (GameObject i in BodySourceView.joints)
-            {
-            Debug.Log(i);
-            }
+        // foreach (GameObject i in BodySourceView.joints)
+        //     {
+        //     Debug.Log(i.name);
+        //     }
         
-
-        
-        // if (this.gameobject == "yes") {next scene}
-        // if (this.gameobject == "no") {previous scene o.i.d.}
+        if (this.gameObject.name == "yes") 
+        {
+            Debug.Log("yes");
+        }
+        // {next scene}
+        if (this.gameObject.name == "no") 
+        {
+            Debug.Log("no");
+        }
+        // {previous scene o.i.d.}
     }
 
    
@@ -47,19 +50,35 @@ public class ButtonPressing : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         // Debug.Log("Stay");
-        // Debug.Log(this.gameObject);
-        // Debug.Log(gameObject);
 
-        // if this.gameobject == "jointcollider" && tag == correcte joint: 
+        foreach (GameObject currentJoint in BodySourceView.joints)
+        {
+            if (this.gameObject.name == currentJoint.name)
+            {
+                Debug.Log("joint en collider gematched");
+                BodySourceView.jointCollided[currentJoint] = true;
+                sprite = gameObject.GetComponent<SpriteRenderer>();
+                sprite.color = new Color (1, 0, 0, 1); 
+            }
             // {gebruik fancy sprite
-            // @ dict this.gameobject = true
                 // if @dict all gameobjects == true add text "hold that pose"
             // }
-
+        }
     }
 
-    // private void OnTriggerLeave2D(Collider2D collision) @ dict this.gameobject = false
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        foreach (GameObject currentJoint in BodySourceView.joints)
+        {
+            if (this.gameObject.name == currentJoint.name)
+            {
+                BodySourceView.jointCollided[currentJoint] = false;
+                sprite = gameObject.GetComponent<SpriteRenderer>();
+                sprite.color = new Color (0, 1, 1, 0);
+            }
+        }
+    }
+    
 }
 
-// meer collissionboxen + tag checker of de correcte joint colide
+// meer collissionboxen
