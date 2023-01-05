@@ -7,10 +7,14 @@ public class ButtonPressing : MonoBehaviour
     public float waitTime;
     WaitForSecondsRealtime waitForSecondsRealtime;
 
+// maak dictionary van alle joint colliders
+
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Start");
+        // if this.gameobject == "jointcollider": gebruik basic sprite
+        // misschien zelfs niet nodig, gebruik prefab voor de jointcolliders?
     }
 
     // Update is called once per frame
@@ -25,8 +29,8 @@ public class ButtonPressing : MonoBehaviour
         // Destroy(this.gameObject);
         Debug.Log("Enter");
         Debug.Log(this.gameObject);
-        // if (this.gameobject == yes) {next scene}
-        // else {previous scene o.i.d.}
+        // if (this.gameobject == "yes") {next scene}
+        // if (this.gameobject == "no") {previous scene o.i.d.}
     }
 
    
@@ -38,7 +42,16 @@ public class ButtonPressing : MonoBehaviour
         Debug.Log("Stay");
         Debug.Log(this.gameObject);
         // deze wordt nooit geraakt want de button verdwijnt atm gelijk
+        // if this.gameobject == "jointcollider" && tag == correcte joint: 
+            // {gebruik fancy sprite
+            // @ dict this.gameobject = true
+                // if @dict all gameobjects == true add text "hold that pose"
+            // }
+
     }
+
+    // private void OnTriggerLeave2D(Collider2D collision) @ dict this.gameobject = false
+
 }
 
 // meer collissionboxen + tag checker of de correcte joint colide
