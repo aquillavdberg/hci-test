@@ -43,6 +43,7 @@ public class ButtonPressing : MonoBehaviour
             Debug.Log("no");
         }
         // {previous scene o.i.d.}
+
     }
 
    
@@ -51,19 +52,17 @@ public class ButtonPressing : MonoBehaviour
     {
         // Debug.Log("Stay");
 
-        foreach (GameObject currentJoint in BodySourceView.joints)
-        {
-            if (this.gameObject.name == currentJoint.name)
+            if (this.gameObject.name == other.gameObject.name)
             {
                 Debug.Log("joint en collider gematched");
-                BodySourceView.jointCollided[currentJoint] = true;
+                // BodySourceView.jointCollided[currentJoint] = true;
                 sprite = gameObject.GetComponent<SpriteRenderer>();
                 sprite.color = new Color (1, 0, 0, 1); 
             }
             // {gebruik fancy sprite
                 // if @dict all gameobjects == true add text "hold that pose"
             // }
-        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -72,7 +71,7 @@ public class ButtonPressing : MonoBehaviour
         {
             if (this.gameObject.name == currentJoint.name)
             {
-                BodySourceView.jointCollided[currentJoint] = false;
+                // BodySourceView.jointCollided[currentJoint] = false;
                 sprite = gameObject.GetComponent<SpriteRenderer>();
                 sprite.color = new Color (0, 1, 1, 0);
             }
