@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static BodySourceView;
+using UnityEngine.SceneManagement;
 
 public class ButtonPressing : MonoBehaviour
 {
@@ -9,13 +10,11 @@ public class ButtonPressing : MonoBehaviour
     public float waitTime;
     WaitForSecondsRealtime waitForSecondsRealtime;
 
-// maak dictionary van alle joint colliders
+// maak dictionary van alle joint colliders om if all colliders collided -> "hold that pose!!"
 
     // Start is called before the first frame update
     void Start()
     {
-        // if this.gameobject == "jointcollider": gebruik basic sprite
-        // misschien zelfs niet nodig, gebruik prefab voor de jointcolliders?
     }
 
     // Update is called once per frame
@@ -26,23 +25,30 @@ public class ButtonPressing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Debug.Log("Enter"+ this.gameObject.name);
+        if (this.gameObject.name == other.gameObject.name)
+        {
+        sprite = gameObject.GetComponent<SpriteRenderer>();
+        sprite.color = new Color (0, 1, 0, 1); 
+        sprite = other.gameObject.GetComponent<SpriteRenderer>();
+        sprite.color = new Color (0, 1, 0, 1); 
+        }
 
-        // foreach (GameObject i in BodySourceView.joints)
-        //     {
-        //     Debug.Log(i.name);
-        //     }
+        Debug.Log("wel getriggered = " + this.gameObject.name);
         
-        if (this.gameObject.name == "yes") 
+        
+        if (this.gameObject.name == "Yes") 
         {
             Debug.Log("yes");
+            SceneManager.LoadScene("stretch 1", LoadSceneMode.Single);
         }
-        // {next scene}
-        if (this.gameObject.name == "no") 
+
+        if (this.gameObject.name == "No") 
         {
             Debug.Log("no");
+            Application.Quit();
+            // {previous scene o.i.d. of pop-up "you want to exit the programm?"}
         }
-        // {previous scene o.i.d.}
+        
 
     }
 
@@ -50,14 +56,12 @@ public class ButtonPressing : MonoBehaviour
    
     private void OnTriggerStay2D(Collider2D collision)
     {
-        // Debug.Log("Stay");
-
-            if (this.gameObject.name == other.gameObject.name)
+            if (this.gameObject.name == collision.gameObject.name)
             {
-                Debug.Log("joint en collider gematched");
-                // BodySourceView.jointCollided[currentJoint] = true;
                 sprite = gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = new Color (1, 0, 0, 1); 
+                sprite.color = new Color (0, 1, 0, 1); 
+                sprite = collision.gameObject.GetComponent<SpriteRenderer>();
+                sprite.color = new Color (0, 1, 0, 1); 
             }
             // {gebruik fancy sprite
                 // if @dict all gameobjects == true add text "hold that pose"
@@ -67,17 +71,17 @@ public class ButtonPressing : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        foreach (GameObject currentJoint in BodySourceView.joints)
-        {
-            if (this.gameObject.name == currentJoint.name)
+        // foreach (GameObject currentJoint in BodySourceView.joints)
+        // {
+            if (this.gameObject.name == collision.gameObject.name)
             {
                 // BodySourceView.jointCollided[currentJoint] = false;
                 sprite = gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = new Color (0, 1, 1, 0);
+                sprite.color = new Color (1, 0, 0, 1);
+                sprite = collision.gameObject.GetComponent<SpriteRenderer>();
+                sprite.color = new Color (1, 0, 0, 1); 
             }
-        }
+        // }
     }
     
 }
-
-// meer collissionboxen

@@ -149,12 +149,12 @@ public class BodySourceView : MonoBehaviour
                 Debug.Log("creating jointobj" + jointObj.name);
                 Debug.Log("jointObj" + jointObj + jointObj.name);
 
-                if (!joints.Contains(jointObj))
-                {
-                    Debug.Log("adding jointObj");
-                    joints.Add(jointObj);
-                }
-                Debug.Log("creating joints list" + joints.Count + joints);
+                // if (!joints.Contains(jointObj))
+                // {
+                //     Debug.Log("adding jointObj");
+                //     joints.Add(jointObj);
+                // }
+                // Debug.Log("creating joints list" + joints.Count + joints);
         }
      
 
