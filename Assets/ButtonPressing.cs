@@ -10,6 +10,13 @@ public class ButtonPressing : MonoBehaviour
     public float waitTime;
     WaitForSecondsRealtime waitForSecondsRealtime;
 
+// ToDo's:
+
+// checken waarom on loadscene kinect moeite heeft met het bestaan
+// {previous scene o.i.d. of pop-up "you want to exit the programm?"}
+// include basic person silhouette sprite
+// add color to sprite @stretching musle
+// add audio support "take a moment to breath here" "in through your nose, out through your mouth" "feel free to slowly lean more and more into the stretch"
 // maak dictionary van alle joint colliders om if all colliders collided -> "hold that pose!!"
 
     // Start is called before the first frame update
@@ -25,18 +32,7 @@ public class ButtonPressing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // if (this.gameObject.name == "Back") 
-        // {
-        //     Debug.Log("Back");
-        //     SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
-        // }
-
-        // if (this.gameObject.name == "Yes") 
-        // {
-        //     Debug.Log("yes");
-        //     SceneManager.LoadScene("Scene1", LoadSceneMode.Single);
-        // }
-        
+       
         Debug.Log("wel getriggered = " + this.gameObject.name);
         
         
@@ -50,7 +46,8 @@ public class ButtonPressing : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name != "Scene1")
         {
-            SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);  
+            SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
+            // checken waarom on loadscene kinect moeite heeft met het bestaan
         }
         else
         {
