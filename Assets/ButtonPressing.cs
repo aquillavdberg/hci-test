@@ -34,12 +34,28 @@ public class ButtonPressing : MonoBehaviour
         }
 
         Debug.Log("wel getriggered = " + this.gameObject.name);
+
+        Scene[] allScenes = SceneManager.GetAllScenes();
+        for (int s = 0; s < allScenes.Length; s++)
+        {
+            if (this.gameObject.name == allScenes[s])
+            // de button moet dus de zelfde naam hebben als de scene waar die aan gekoppeld wordt
+            {
+            Debug.Log(allScenes[s]);
+            SceneManager.LoadScene(allScenes[s], LoadSceneMode.Single);  
+            } 
+        }
         
-        
+        // if (this.gameObject.name == "Back") 
+        // {
+        //     Debug.Log("Back");
+        //     SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+        // }
+
         if (this.gameObject.name == "Yes") 
         {
             Debug.Log("yes");
-            SceneManager.LoadScene("stretch 1", LoadSceneMode.Single);
+            SceneManager.LoadScene("Scene1", LoadSceneMode.Single);
         }
 
         if (this.gameObject.name == "No") 
