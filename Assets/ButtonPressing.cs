@@ -16,7 +16,11 @@ public class ButtonPressing : MonoBehaviour
 // {previous scene o.i.d. of pop-up "you want to exit the programm?"}
 // include basic person silhouette sprite
 // add color to sprite @stretching musle
-// add audio support "take a moment to breath here" "in through your nose, out through your mouth" "feel free to slowly lean more and more into the stretch"
+// add audio support:
+//  "take a moment to breath here" 
+// "in through your nose, out through your mouth" 
+// "feel free to slowly lean more and more into the stretch"
+
 // maak dictionary van alle joint colliders om if all colliders collided -> "hold that pose!!"
 
     // Start is called before the first frame update
