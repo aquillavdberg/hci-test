@@ -25,44 +25,48 @@ public class ButtonPressing : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (this.gameObject.name == other.gameObject.name)
-        {
-        sprite = gameObject.GetComponent<SpriteRenderer>();
-        sprite.color = new Color (0, 1, 0, 1); 
-        sprite = other.gameObject.GetComponent<SpriteRenderer>();
-        sprite.color = new Color (0, 1, 0, 1); 
-        }
-
-        Debug.Log("wel getriggered = " + this.gameObject.name);
-
-        Scene[] allScenes = SceneManager.GetAllScenes();
-        for (int s = 0; s < allScenes.Length; s++)
-        {
-            if (this.gameObject.name == allScenes[s])
-            // de button moet dus de zelfde naam hebben als de scene waar die aan gekoppeld wordt
-            {
-            Debug.Log(allScenes[s]);
-            SceneManager.LoadScene(allScenes[s], LoadSceneMode.Single);  
-            } 
-        }
-        
         // if (this.gameObject.name == "Back") 
         // {
         //     Debug.Log("Back");
         //     SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
         // }
 
-        if (this.gameObject.name == "Yes") 
-        {
-            Debug.Log("yes");
-            SceneManager.LoadScene("Scene1", LoadSceneMode.Single);
-        }
-
+        // if (this.gameObject.name == "Yes") 
+        // {
+        //     Debug.Log("yes");
+        //     SceneManager.LoadScene("Scene1", LoadSceneMode.Single);
+        // }
+        
+        Debug.Log("wel getriggered = " + this.gameObject.name);
+        
+        
         if (this.gameObject.name == "No") 
         {
             Debug.Log("no");
             Application.Quit();
             // {previous scene o.i.d. of pop-up "you want to exit the programm?"}
+        }
+
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "Scene1")
+        {
+            SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);  
+        }
+        else
+        {
+            if (this.gameObject.name == other.gameObject.name)
+            {
+            sprite = gameObject.GetComponent<SpriteRenderer>();
+            sprite.color = new Color (0, 1, 0, 1); 
+            sprite = other.gameObject.GetComponent<SpriteRenderer>();
+            sprite.color = new Color (0, 1, 0, 1); 
+            }
+
+            if (this.gameObject.name == "MainScene") 
+        {
+            SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
+            // {previous scene o.i.d. of pop-up "you want to exit the programm?"}
+        }
         }
         
 
