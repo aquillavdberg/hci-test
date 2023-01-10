@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 using System;
 using System.Collections;
@@ -84,7 +85,7 @@ public class KinectManager : MonoBehaviour
 	public List<MonoBehaviour> GestureListeners;
 	
 	// GUI Text to show messages.
-	public GUIText CalibrationText;
+	public Text CalibrationText;
 	
 	// GUI Texture to display the hand cursor for Player1
 	public GameObject HandCursor1;
@@ -96,7 +97,7 @@ public class KinectManager : MonoBehaviour
 	public bool ControlMouseCursor = false;
 
 	// GUI Text to show gesture debug message.
-	public GUIText GesturesDebugText;
+	public Text GesturesDebugText;
 	
 
 	// Bool to keep track of whether Kinect has been initialized
