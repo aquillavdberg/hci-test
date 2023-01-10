@@ -1005,7 +1005,7 @@ public class KinectManager : MonoBehaviour
 			Debug.LogError(message);
 			Debug.LogError(e.ToString());
 			if(CalibrationText != null)
-				CalibrationText.guiText.text = message;
+				CalibrationText.text = message;
 				
 			return;
 		}
@@ -1015,7 +1015,7 @@ public class KinectManager : MonoBehaviour
 			Debug.LogError(message);
 			Debug.LogError(e.ToString());
 			if(CalibrationText != null)
-				CalibrationText.guiText.text = message;
+				CalibrationText.text = message;
 				
 			return;
 		}
@@ -1091,7 +1091,7 @@ public class KinectManager : MonoBehaviour
 		// GUI Text.
 		if(CalibrationText != null)
 		{
-			CalibrationText.guiText.text = "WAITING FOR USERS";
+			CalibrationText.text = "WAITING FOR USERS";
 		}
 		
 		Debug.Log("Waiting for users.");
@@ -1604,7 +1604,7 @@ public class KinectManager : MonoBehaviour
 			
 			if(CalibrationText != null)
 			{
-				CalibrationText.guiText.text = "";
+				CalibrationText.text = "";
 			}
 		}
     }
@@ -1666,7 +1666,7 @@ public class KinectManager : MonoBehaviour
 
 		if(CalibrationText != null)
 		{
-			CalibrationText.guiText.text = "WAITING FOR USERS";
+			CalibrationText.text = "WAITING FOR USERS";
 		}
 	}
 	
@@ -1777,7 +1777,7 @@ public class KinectManager : MonoBehaviour
 //								player1JointsTracked[j] ? "T" : "F", player1JointsPos[j]/**, skeletonData.SkeletonPositions[j]*/);
 //							
 //							if(CalibrationText)
-//								CalibrationText.guiText.text = debugText;
+//								CalibrationText.text = debugText;
 //						}
 					}
 					
@@ -1865,7 +1865,7 @@ public class KinectManager : MonoBehaviour
 							sDebugGestures += string.Format("\n HipRight: {0}", player1JointsTracked[(int)KinectWrapper.NuiSkeletonPositionIndex.HipRight] ?
 							                                player1JointsPos[(int)KinectWrapper.NuiSkeletonPositionIndex.HipRight].ToString() : "");
 
-							GesturesDebugText.guiText.text = sDebugGestures;
+							GesturesDebugText.text = sDebugGestures;
 						}
 					}
 				}
