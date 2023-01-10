@@ -8,9 +8,8 @@ public class LoadMainLevel : MonoBehaviour
 	
 	void Update() 
 	{
-		KinectManager manager = KinectManager.Instance;
 		
-		if(!levelLoaded && manager && KinectManager.IsKinectInitialized())
+		if(!levelLoaded && BodySourceView.Initialization)
 		{
 			levelLoaded = true;
 			Application.LoadLevel(1);

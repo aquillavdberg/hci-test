@@ -638,6 +638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KinectObject
       objectReference: {fileID: 0}
+    - target: {fileID: 474921887370391005, guid: 73938bcce37090b4fa3b54f2b6790861, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2538391762520362359, guid: 73938bcce37090b4fa3b54f2b6790861, type: 3}
       propertyPath: m_RootOrder
       value: 12
