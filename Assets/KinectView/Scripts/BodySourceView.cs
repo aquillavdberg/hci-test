@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Kinect = Windows.Kinect;
+using UnityEngine.Rendering;
 
 
 public class BodySourceView : MonoBehaviour 
@@ -54,6 +55,7 @@ public class BodySourceView : MonoBehaviour
     
     void Update () 
     {
+        DontDestroyOnLoad(gameObject);
 
         if (BodySourceManager == null)
         {
@@ -124,23 +126,15 @@ public class BodySourceView : MonoBehaviour
         }
     }
     
-    // public bool IsKinectInitialized(Kinect.Body[] data)
-	// {
-	// 	if (data != null)
-    //     {
-    //         Initialization = true;
-    //         return true;
-    //     }
-    //     else
-    //     {
-    //         Initialization = false;
-    //         return false;
-    //     }
-	// }
 
     private GameObject CreateBodyObject(ulong id)
     {
         GameObject body = new GameObject("Body:" + id);
+        // body.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
+        // body.GetComponent<SpriteRenderer>().sortingOrder = 10;
+        
+        // DontDestroyOnLoad(gameObject);
+
         
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {   

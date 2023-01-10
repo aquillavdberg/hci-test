@@ -48,7 +48,7 @@ public class ButtonPressing : MonoBehaviour
         }
 
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name != "Scene1")
+        if (scene.name != "LateralStretch")
         {
             SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
             // checken waarom on loadscene kinect moeite heeft met het bestaan
@@ -75,20 +75,20 @@ public class ButtonPressing : MonoBehaviour
 
    
    
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-            if (this.gameObject.name == collision.gameObject.name)
-            {
-                sprite = gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = new Color (0, 1, 0, 1); 
-                sprite = collision.gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = new Color (0, 1, 0, 1); 
-            }
-            // {gebruik fancy sprite
-                // if @dict all gameobjects == true add text "hold that pose"
-            // }
+    // private void OnTriggerStay2D(Collider2D collision)
+    // {
+    //         if (this.gameObject.name == collision.gameObject.name)
+    //         {
+    //             sprite = gameObject.GetComponent<SpriteRenderer>();
+    //             sprite.color = new Color (0, 1, 0, 1); 
+    //             sprite = collision.gameObject.GetComponent<SpriteRenderer>();
+    //             sprite.color = new Color (0, 1, 0, 1); 
+    //         }
+    //         // {gebruik fancy sprite
+    //             // if @dict all gameobjects == true add text "hold that pose"
+    //         // }
         
-    }
+    // }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
