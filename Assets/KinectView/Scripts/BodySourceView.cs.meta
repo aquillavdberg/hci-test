@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - BoneMaterial: {instanceID: 0}
+  - BoneMaterial: {fileID: 2100000, guid: f2ea145c63353784985576f08398a815, type: 2}
   - BodySourceManager: {instanceID: 0}
   - HandPrefab: {fileID: 1932280541174432661, guid: 65db47b00fa95d4459f2836d75e170a3, type: 3}
   executionOrder: 0

@@ -107,6 +107,7 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
@@ -302,6 +303,7 @@
 -r:"C:/Users/aquil/unity/hci - Copy - Copy/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/AOT/Newtonsoft.Json.dll"
 -r:"C:/Users/aquil/unity/hci - Copy - Copy/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Assembly-CSharp-firstpass.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aP.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Services.Core.Analytics.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Services.Core.Environments.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Services.Core.ref.dll"
@@ -313,6 +315,33 @@
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
 "Assets/but.cs"
 "Assets/ButtonPressing.cs"
+"Assets/DepthColliderDemo/Scripts/DepthImageViewer.cs"
+"Assets/DepthColliderDemo/Scripts/EggMover.cs"
+"Assets/DepthColliderDemo/Scripts/EggSpawner.cs"
+"Assets/EasyCustomCursor/Scripts/CustomCursor.cs"
+"Assets/EasyCustomCursor/Scripts/CustomCursorInputs.cs"
+"Assets/GesturesDemo/Scripts/GestureListener.cs"
+"Assets/GesturesDemo/Scripts/PresentationScript.cs"
+"Assets/KinectScripts/AvatarController.cs"
+"Assets/KinectScripts/AvatarControllerClassic.cs"
+"Assets/KinectScripts/Cubeman/CubemanController.cs"
+"Assets/KinectScripts/Filters/BoneOrientationsConstraint.cs"
+"Assets/KinectScripts/Filters/BoneOrientationsFilter.cs"
+"Assets/KinectScripts/Filters/ClippedLegsFilter.cs"
+"Assets/KinectScripts/Filters/JointPositionsFilter.cs"
+"Assets/KinectScripts/Filters/KinectHelper.cs"
+"Assets/KinectScripts/Filters/SelfIntersectionConstraint.cs"
+"Assets/KinectScripts/Filters/TimedLerp.cs"
+"Assets/KinectScripts/Filters/TrackingStateFilter.cs"
+"Assets/KinectScripts/KinectGestures.cs"
+"Assets/KinectScripts/KinectManager.cs"
+"Assets/KinectScripts/KinectWrapper.cs"
+"Assets/KinectScripts/Samples/FollowUserRotation.cs"
+"Assets/KinectScripts/Samples/GetJointPositionDemo.cs"
+"Assets/KinectScripts/Samples/LoadMainLevel.cs"
+"Assets/KinectScripts/Samples/MouseControl.cs"
+"Assets/KinectScripts/Samples/SetSceneAvatars.cs"
+"Assets/KinectScripts/Samples/SimpleGestureListener.cs"
 "Assets/KinectView/Scripts/BodySourceManager.cs"
 "Assets/KinectView/Scripts/BodySourceView.cs"
 "Assets/KinectView/Scripts/ColorSourceManager.cs"
@@ -323,7 +352,13 @@
 "Assets/KinectView/Scripts/InfraredSourceManager.cs"
 "Assets/KinectView/Scripts/InfraredSourceView.cs"
 "Assets/KinectView/Scripts/MultiSourceManager.cs"
+"Assets/OverlayDemo/Scripts/KinectOverlayer.cs"
 "Assets/SampleScenes/Script/DetectJoints.cs"
+"Assets/Simple Sprite Packer/Scripts/SPAction.cs"
+"Assets/Simple Sprite Packer/Scripts/SPActionType.cs"
+"Assets/Simple Sprite Packer/Scripts/SPInstance.cs"
+"Assets/Simple Sprite Packer/Scripts/SPSpriteInfo.cs"
+"Assets/Simple Sprite Packer/Scripts/UITexturePacker.cs"
 -langversion:9.0
 
 /deterministic

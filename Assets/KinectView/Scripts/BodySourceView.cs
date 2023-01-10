@@ -9,7 +9,7 @@ public class BodySourceView : MonoBehaviour
     public Material BoneMaterial;
     public GameObject BodySourceManager;
     public GameObject HandPrefab;
-    public GameObject JointColliderPrefab;
+    // public GameObject JointColliderPrefab;
 
     public static List<GameObject> joints = new List<GameObject>();
     // public static Dictionary<GameObject, bool > jointCollided = new Dictionary < GameObject, bool > ();
