@@ -36,7 +36,8 @@ public class KinectOverlayer : MonoBehaviour
 			//backgroundImage.renderer.material.mainTexture = manager.GetUsersClrTex();
 			if(backgroundImage && (backgroundImage.mainTexture == null))
 			{
-				backgroundImage.mainTexture = manager.GetUsersClrTex();
+				backgroundImage.GetComponent<Renderer>().material.mainTexture = manager.GetUsersClrTex();
+				// backgroundImage.mainTexture = manager.GetUsersClrTex();
 			}
 			
 //			Vector3 vRight = BottomRight - BottomLeft;
