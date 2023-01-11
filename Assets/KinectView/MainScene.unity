@@ -1030,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 5581905139175907721, guid: 8279f0d9b18e0dc419846846659dbf45, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 288d64149fc09e64482af58fdacc3c1b, type: 3}
+      objectReference: {fileID: 1599169732, guid: fed7ff62525ca06419deebc381d7be69, type: 3}
     - target: {fileID: 5581905139175907721, guid: 8279f0d9b18e0dc419846846659dbf45, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -1086,7 +1086,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0.49056602, b: 0.4539607, a: 0.019607844}
+  m_BackGroundColor: {r: 0.83137256, g: 0.8745098, b: 0.9372549, a: 0.019607844}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1218,6 +1218,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3057767630581588611, guid: 17d8aaba0090e8744be7a7dbfdb8d0a8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -593521079, guid: fed7ff62525ca06419deebc381d7be69, type: 3}
     - target: {fileID: 3057767630581588638, guid: 17d8aaba0090e8744be7a7dbfdb8d0a8, type: 3}
       propertyPath: m_Name
       value: No
