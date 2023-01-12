@@ -12,7 +12,7 @@ public class ButtonPressing : MonoBehaviour
 
 // ToDo's:
 
-// {previous scene o.i.d. of pop-up "you want to exit the programm?"}
+// on button clicks: pop up "please confirm" met gestures? duim omhoog/duim omlaag?
 // add color to sprite @stretching musle
 // add audio support:
 //  "take a moment to breath here" 
