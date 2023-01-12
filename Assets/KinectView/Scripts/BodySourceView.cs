@@ -10,7 +10,6 @@ public class BodySourceView : MonoBehaviour
     public Material BoneMaterial;
     public GameObject BodySourceManager;
     public GameObject HandPrefab;
-    // public GameObject KinectObject;
     public static bool Initialization;
 
     public static List<GameObject> joints = new List<GameObject>();
@@ -73,12 +72,6 @@ public class BodySourceView : MonoBehaviour
         {
             return;
         }
-        
-        // Initialization] = true;
-        // DontDestroyOnLoad(gameObject);
-        // DontDestroyOnLoad(KinectObject);
-        
-        // IsKinectInitialized(data);
 
         List<ulong> trackedIds = new List<ulong>();
         foreach(var body in data)
