@@ -3,15 +3,18 @@ using UnityEngine;
 using UnityEditor;
 // using static EditorWindow;
 
-public class EditorWindowWithPopup : EditorWindow
+public class EditorWindowWithPopup : MonoBehaviour
 {
-    public static EditorWindow window;
+
+    public static GameObject popupObj;
+    // popupObj.ge
+
     // Add menu item
     // [MenuItem("Confirm navigation")]
     public static void Init()
     {
-        EditorWindow window = EditorWindow.CreateInstance<EditorWindow>();
-        window.Show();
+        GameObject popupObj = new GameObject("popupObj");
+        popupObj.AddComponent()
     }
 
    public static Rect buttonRect;
@@ -37,8 +40,7 @@ public class EditorWindowWithPopup : EditorWindow
 
     public static void Remove()
     {
-        // Destroy(window);
-        UnityEngine.Object.Destroy(window);
+        Destroy(popupObj);
     }
 }
 

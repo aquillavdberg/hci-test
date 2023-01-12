@@ -65,6 +65,8 @@ public class ButtonPressing : MonoBehaviour
                     if (EditorWindowWithPopup.OnGUI(gameObject)== "true") 
                     {
                         SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
+                        yield return new WaitForSeconds(2);
+
                     }
                     if (EditorWindowWithPopup.OnGUI(gameObject)== "false") 
                     {
