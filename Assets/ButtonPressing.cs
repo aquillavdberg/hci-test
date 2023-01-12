@@ -4,7 +4,6 @@ using UnityEngine;
 using static BodySourceView;
 using UnityEngine.SceneManagement;
 using UnityEditor;
-using static EditorWindowWithPopup;
 
 
 // ToDo's:
@@ -35,21 +34,11 @@ public class ButtonPressing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-       
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
-       
-        Debug.Log("wel getriggered = " + this.gameObject.name);
-        
-        
-        if (this.gameObject.name == "No") 
-        {
-            Debug.Log("no");
-            Application.Quit();
-        }
-
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name != "LateralStretch")
         {
@@ -70,6 +59,29 @@ public class ButtonPressing : MonoBehaviour
             //      if jointcollided[i] == true {do nothing}
             //      if jointcollided[i] == false {AllJointsCollided = false}
             // if AllJointsCOllided == true {pop up "hold that pose" of add audio fragment o.i.d.}
+            }
+            else{
+                // do hier popup unit
+                EditorWindowWithPopup.Init();
+                if (OnGUI()) {}
+
+                if (this.gameObject.name == "Torso") 
+                {
+                    EditorWindowWithPopup.Init();
+                    if (OnGUI(gameObject)) 
+                    {
+                        SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
+                    }
+                    else
+                    {
+                        EditorWindowWithPopup.Remove();
+                    }
+                }
+                if (this.gameObject.name == "No") 
+                {
+                    Debug.Log("no");
+                    Application.Quit();
+                }
             }
 
             if (this.gameObject.name == "Torso") 
