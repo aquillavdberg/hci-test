@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/KinectView/Torso.unity
     guid: ae4617674e43d854899f5c5fb3d120fd
+  - enabled: 1
+    path: Assets/KinectView/LateralStretch.unity
+    guid: 203b55195cfb5f342be0494a6eb2c1d8
   m_configObjects: {}
