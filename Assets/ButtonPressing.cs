@@ -8,6 +8,7 @@ public class ButtonPressing : MonoBehaviour
 {
     SpriteRenderer sprite;
     public float waitTime;
+    // public bool AllJointsCollided
     WaitForSecondsRealtime waitForSecondsRealtime;
 
 // ToDo's:
@@ -59,6 +60,12 @@ public class ButtonPressing : MonoBehaviour
             sprite.color = new Color (0, 1, 0, 1); 
             sprite = other.gameObject.GetComponent<SpriteRenderer>();
             sprite.color = new Color (0, 1, 0, 1); 
+            // AllJointsCollided = true
+            // BodySourceView.jointCollided[currentJoint] = true;
+            // foreach in jointcollided[]
+            //      if jointcollided[i] == true {do nothing}
+            //      if jointcollided[i] == false {AllJointsCollided = false}
+            // if AllJointsCOllided == true {pop up "hold that pose" of add audio fragment o.i.d.}
             }
 
             if (this.gameObject.name == "Torso") 
@@ -71,27 +78,9 @@ public class ButtonPressing : MonoBehaviour
 
     }
 
-   
-   
-    // private void OnTriggerStay2D(Collider2D collision)
-    // {
-    //         if (this.gameObject.name == collision.gameObject.name)
-    //         {
-    //             sprite = gameObject.GetComponent<SpriteRenderer>();
-    //             sprite.color = new Color (0, 1, 0, 1); 
-    //             sprite = collision.gameObject.GetComponent<SpriteRenderer>();
-    //             sprite.color = new Color (0, 1, 0, 1); 
-    //         }
-    //         // {gebruik fancy sprite
-    //             // if @dict all gameobjects == true add text "hold that pose"
-    //         // }
-        
-    // }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // foreach (GameObject currentJoint in BodySourceView.joints)
-        // {
             if (this.gameObject.name == collision.gameObject.name)
             {
                 // BodySourceView.jointCollided[currentJoint] = false;
@@ -100,7 +89,7 @@ public class ButtonPressing : MonoBehaviour
                 sprite = collision.gameObject.GetComponent<SpriteRenderer>();
                 sprite.color = new Color (1, 0, 0, 1); 
             }
-        // }
+
     }
     
 }
