@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/KinectView/template.unity
+- path: Assets/KinectView/LateralStretch.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
