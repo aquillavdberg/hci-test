@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static BodySourceView;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
-public class ButtonPressing : MonoBehaviour
-{
-    SpriteRenderer sprite;
-    public float waitTime;
-    // public bool AllJointsCollided
-    WaitForSecondsRealtime waitForSecondsRealtime;
 
 // ToDo's:
 
@@ -24,6 +19,13 @@ public class ButtonPressing : MonoBehaviour
 
 // maak dictionary van alle joint colliders om if all colliders collided -> "hold that pose!!"
 
+public class ButtonPressing : MonoBehaviour
+{
+    SpriteRenderer sprite;
+    public float waitTime;
+    // public bool AllJointsCollided
+    WaitForSecondsRealtime waitForSecondsRealtime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,28 +33,14 @@ public class ButtonPressing : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-       
+    {   
     }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
-       
-        Debug.Log("wel getriggered = " + this.gameObject.name);
-        
-        
-        if (this.gameObject.name == "No") 
-        {
-            Debug.Log("no");
-            Application.Quit();
-        }
-
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name != "LateralStretch")
-        {
-            SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
-        }
-        else
+        if (scene.name == "LateralStretch")
         {
             if (this.gameObject.name == other.gameObject.name)
             {
@@ -67,12 +55,39 @@ public class ButtonPressing : MonoBehaviour
             //      if jointcollided[i] == false {AllJointsCollided = false}
             // if AllJointsCOllided == true {pop up "hold that pose" of add audio fragment o.i.d.}
             }
+            else{
+                // do hier popup unit
+                EditorWindowWithPopup.Init();
+                if (OnGUI()) {}
 
-            if (this.gameObject.name == "Torso") 
-        {
-            SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
-            // {previous scene o.i.d. of pop-up "you want to exit the programm?"}
+                if (this.gameObject.name == "Torso") 
+                {
+                    EditorWindowWithPopup.Init();
+                    if (OnGUI(gameObject)) 
+                    {
+                        SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
+                    }
+                    else
+                    {
+                        EditorWindowWithPopup.Remove();
+                    }
+                }
+                if (this.gameObject.name == "No") 
+                {
+                    Debug.Log("no");
+                    Application.Quit();
+                }
+            }
+
         }
+        else {
+     
+        if (this.gameObject.name == "No") 
+        {
+            Debug.Log("no");
+            Application.Quit();
+        }
+        SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
         }
         
 
