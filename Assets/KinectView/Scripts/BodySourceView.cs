@@ -74,7 +74,7 @@ public class BodySourceView : MonoBehaviour
             return;
         }
         
-        Initialization = true;
+        // Initialization] = true;
         DontDestroyOnLoad(gameObject);
         // DontDestroyOnLoad(KinectObject);
         
@@ -132,8 +132,6 @@ public class BodySourceView : MonoBehaviour
         GameObject body = new GameObject("Body:" + id);
         // body.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
         // body.GetComponent<SpriteRenderer>().sortingOrder = 10;
-        
-        // DontDestroyOnLoad(gameObject);
 
         
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)

@@ -12,9 +12,7 @@ public class ButtonPressing : MonoBehaviour
 
 // ToDo's:
 
-// checken waarom on loadscene kinect moeite heeft met het bestaan
 // {previous scene o.i.d. of pop-up "you want to exit the programm?"}
-// include basic person silhouette sprite
 // add color to sprite @stretching musle
 // add audio support:
 //  "take a moment to breath here" 
