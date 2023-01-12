@@ -75,7 +75,7 @@ public class BodySourceView : MonoBehaviour
         }
         
         // Initialization] = true;
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
         // DontDestroyOnLoad(KinectObject);
         
         // IsKinectInitialized(data);

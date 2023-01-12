@@ -61,7 +61,7 @@ public class ButtonPressing : MonoBehaviour
             sprite.color = new Color (0, 1, 0, 1); 
             }
 
-            if (this.gameObject.name == "MainScene") 
+            if (this.gameObject.name == "Torso") 
         {
             SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
             // {previous scene o.i.d. of pop-up "you want to exit the programm?"}

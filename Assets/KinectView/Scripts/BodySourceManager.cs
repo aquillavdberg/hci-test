@@ -31,6 +31,10 @@ public class BodySourceManager : MonoBehaviour
     
     void Update () 
     {
+        if (!_Sensor.IsOpen)
+            {
+                _Sensor.Open();
+            }
         if (_Reader != null)
         {
             var frame = _Reader.AcquireLatestFrame();
