@@ -4,6 +4,7 @@ using UnityEngine;
 using static BodySourceView;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using static EditorWindowWithPopup;
 
 
 // ToDo's:
@@ -58,39 +59,58 @@ public class ButtonPressing : MonoBehaviour
             else{
                 // do hier popup unit
                 EditorWindowWithPopup.Init();
-                if (OnGUI()) {}
-
                 if (this.gameObject.name == "Torso") 
                 {
-                    EditorWindowWithPopup.Init();
-                    if (OnGUI(gameObject)) 
+                    while (EditorWindowWithPopup.OnGUI(gameObject)== "still waiting"){}
+                    if (EditorWindowWithPopup.OnGUI(gameObject)== "true") 
                     {
                         SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
                     }
-                    else
+                    if (EditorWindowWithPopup.OnGUI(gameObject)== "false") 
                     {
                         EditorWindowWithPopup.Remove();
                     }
                 }
                 if (this.gameObject.name == "No") 
                 {
-                    Debug.Log("no");
-                    Application.Quit();
+                    while (EditorWindowWithPopup.OnGUI(gameObject)== "still waiting"){}
+                    if (EditorWindowWithPopup.OnGUI(gameObject)== "true")
+                        {Debug.Log("no");
+                        Application.Quit();}
+                    if (EditorWindowWithPopup.OnGUI(gameObject)== "false") 
+                    {
+                        EditorWindowWithPopup.Remove();
+                    }
                 }
             }
 
         }
         else {
-     
-        if (this.gameObject.name == "No") 
-        {
-            Debug.Log("no");
-            Application.Quit();
-        }
-        SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
-        }
-        
-
+            EditorWindowWithPopup.Init();
+            if (this.gameObject.name == "No") 
+                {
+                    while (EditorWindowWithPopup.OnGUI(gameObject)== "still waiting"){}
+                    if (EditorWindowWithPopup.OnGUI(gameObject)== "true")
+                        {Debug.Log("no");
+                        Application.Quit();}
+                    if (EditorWindowWithPopup.OnGUI(gameObject)== "false") 
+                    {
+                        EditorWindowWithPopup.Remove();
+                    }
+                }
+            else
+            {
+                while (EditorWindowWithPopup.OnGUI(gameObject)== "still waiting"){}
+                    if (EditorWindowWithPopup.OnGUI(gameObject)== "true") 
+                    {
+                        SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
+                    }
+                    if (EditorWindowWithPopup.OnGUI(gameObject)== "false") 
+                    {
+                        EditorWindowWithPopup.Remove();
+                    }
+            }
+        } 
     }
 
 
