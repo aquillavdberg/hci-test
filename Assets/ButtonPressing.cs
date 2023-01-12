@@ -13,6 +13,8 @@ public class ButtonPressing : MonoBehaviour
 // ToDo's:
 
 // on button clicks: pop up "please confirm" met gestures? duim omhoog/duim omlaag?
+// add home button
+// render skeleton in front of the stretch
 // add color to sprite @stretching musle
 // add audio support:
 //  "take a moment to breath here" 
@@ -42,14 +44,12 @@ public class ButtonPressing : MonoBehaviour
         {
             Debug.Log("no");
             Application.Quit();
-            // {previous scene o.i.d. of pop-up "you want to exit the programm?"}
         }
 
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name != "LateralStretch")
         {
             SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
-            // checken waarom on loadscene kinect moeite heeft met het bestaan
         }
         else
         {
