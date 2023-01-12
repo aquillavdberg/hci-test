@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using static BodySourceView;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
-public class ButtonPressing : MonoBehaviour
-{
-    SpriteRenderer sprite;
-    public float waitTime;
-    // public bool AllJointsCollided
-    WaitForSecondsRealtime waitForSecondsRealtime;
 
 // ToDo's:
 
@@ -24,6 +19,13 @@ public class ButtonPressing : MonoBehaviour
 
 // maak dictionary van alle joint colliders om if all colliders collided -> "hold that pose!!"
 
+public class ButtonPressing : MonoBehaviour
+{
+    SpriteRenderer sprite;
+    public float waitTime;
+    // public bool AllJointsCollided
+    WaitForSecondsRealtime waitForSecondsRealtime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,7 @@ public class ButtonPressing : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
        
     }
 
