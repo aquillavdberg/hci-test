@@ -58,7 +58,8 @@ public class ButtonPressing : MonoBehaviour
             if (this.gameObject.name == other.gameObject.name)
             {
             sprite = gameObject.GetComponent<SpriteRenderer>();
-            sprite.color = new Color (0, 1, 0, 1); 
+            sprite.color = new Color (24, 219, 34, 255); 
+            // uitzoeken correcte kleur vd sprite
             sprite = other.gameObject.GetComponent<SpriteRenderer>();
             sprite.color = new Color (0, 1, 0, 1); 
             // AllJointsCollided = true
