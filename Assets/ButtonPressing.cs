@@ -51,6 +51,7 @@ public class ButtonPressing : MonoBehaviour
         if (scene.name != "LateralStretch")
         {
             SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
+            System.Threading.Thread.Sleep(500);
         }
         else
         {
@@ -69,10 +70,10 @@ public class ButtonPressing : MonoBehaviour
             }
 
             if (this.gameObject.name == "Torso") 
-        {
-            SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
-            // {previous scene o.i.d. of pop-up "you want to exit the programm?"}
-        }
+            {
+                SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
+                System.Threading.Thread.Sleep(500);
+            }
         }
         
 
