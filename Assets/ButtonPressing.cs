@@ -57,8 +57,7 @@ public class ButtonPressing : MonoBehaviour
             if (this.gameObject.name == other.gameObject.name)
             {
             sprite = gameObject.GetComponent<SpriteRenderer>();
-            sprite.color = new Color (24, 219, 34, 255); 
-            // uitzoeken correcte kleur vd sprite
+            sprite.color = new Color (0, 255, 0, 255);
             sprite = other.gameObject.GetComponent<SpriteRenderer>();
             sprite.color = new Color (0, 1, 0, 1); 
             // AllJointsCollided = true
@@ -86,7 +85,7 @@ public class ButtonPressing : MonoBehaviour
             {
                 // BodySourceView.jointCollided[currentJoint] = false;
                 sprite = gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = new Color (1, 0, 0, 1);
+                sprite.color = new Color (255, 0, 255, 255);
                 sprite = collision.gameObject.GetComponent<SpriteRenderer>();
                 sprite.color = new Color (1, 0, 0, 1); 
             }
