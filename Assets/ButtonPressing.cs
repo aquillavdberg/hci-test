@@ -34,7 +34,7 @@ public class ButtonPressing : MonoBehaviour
         if (scene.name == "LateralStretch")
         {
             LateralStretchTimer = Time.time;
-            // Debug.Log("timer is set at" + LateralStretchTimer);
+            // Debug.Log("timer is set at" + LateralStretchTimer);d
         }
     }
 
@@ -47,7 +47,7 @@ public class ButtonPressing : MonoBehaviour
             var TimeDif = Time.time - LateralStretchTimer;
             // Debug.Log("time is at" + Time.time + "the difference is" + TimeDif);
 
-            if (Time.time - LateralStretchTimer >= 20)
+            if (Time.time - LateralStretchTimer >= 25)
             {
                 
                 if (doneMirror == 0)
@@ -58,19 +58,19 @@ public class ButtonPressing : MonoBehaviour
                 }
             }
 
-            // if (Time.time - LateralStretchTimer >= 35)
-            // {
-                
-            //     if (doneStretch == 0)
-            //     {
-            //         GameObject doneStretching = new GameObject("DoneStretching");
-            //         doneStretching.AddComponent<Text>();
-            //         Text mytext = doneStretching.GetComponent<Text>();
-            //         mytext.text = "Good job!";
-        	//         mytext.font = Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
-            //         doneStretch +=1;
-            //     }
-            // }
+            if (Time.time - LateralStretchTimer >= 40)
+            {
+                // Debug.Log("Time.time - LateralStretchTimer >= 35");
+                if (doneStretch == 0)
+                {
+                    // Debug.Log("doneStretch = " + doneStretch);
+                    GameObject doneStretching = GameObject.FindWithTag("GoodJob");
+                    // Debug.Log(doneStretching.name);
+                    doneStretching.transform.GetChild(0).gameObject.SetActive(true);
+                    
+                    doneStretch += 1;
+                }
+            }
         }
     }
 
