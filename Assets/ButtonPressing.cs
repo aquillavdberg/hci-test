@@ -13,12 +13,9 @@ public class ButtonPressing : MonoBehaviour
 
 // ToDo's:
 
+// wacht voor 15 s: create button "continue" -> 2e lateral stretch scene maar dan mirrored
 // render skeleton in front of the stretch
 // add color to sprite (@stretching musle)
-// add audio support:
-//  "take a moment to breath here" 
-// "in through your nose, out through your mouth" 
-// "feel free to slowly lean more and more into the stretch"
 // add home button
 
 // maak dictionary van alle joint colliders om if all colliders collided -> "hold that pose!!"
@@ -83,7 +80,7 @@ public class ButtonPressing : MonoBehaviour
     {
             if (this.gameObject.name == collision.gameObject.name)
             {
-                // BodySourceView.jointCollided[currentJoint] = false;
+                // BodySourceView.jointCollided[collision.gameObject.name] = false;
                 sprite = gameObject.GetComponent<SpriteRenderer>();
                 sprite.color = new Color (255, 0, 255, 255);
                 sprite = collision.gameObject.GetComponent<SpriteRenderer>();
