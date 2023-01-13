@@ -335,6 +335,7 @@
 "Assets/EasyCustomCursor/Scripts/CustomCursor.cs"
 "Assets/EasyCustomCursor/Scripts/CustomCursorInputs.cs"
 "Assets/EditorWIndowWithPopup.cs"
+"Assets/FlipStretch.cs"
 "Assets/GesturesDemo/Scripts/GestureListener.cs"
 "Assets/GesturesDemo/Scripts/PresentationScript.cs"
 "Assets/KinectScripts/AvatarController.cs"
