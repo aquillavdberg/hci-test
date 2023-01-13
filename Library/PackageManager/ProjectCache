@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638091100516001067
-    m_Hash: 2139120216
+      ticks: 638091361900780922
+    m_Hash: 411163513
   m_LockFileStatus:
     m_FilePath: C:/Users/aquil/unity/hci - Copy - Copy/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638091100516081071
-    m_Hash: 2173397787
+      ticks: 638091361900786231
+    m_Hash: 3205552862
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
