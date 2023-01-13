@@ -13,14 +13,13 @@ public class ButtonPressing : MonoBehaviour
 
 // ToDo's:
 
-// on button clicks: pop up "please confirm" met gestures? duim omhoog/duim omlaag?
-// add home button
 // render skeleton in front of the stretch
-// add color to sprite @stretching musle
+// add color to sprite (@stretching musle)
 // add audio support:
 //  "take a moment to breath here" 
 // "in through your nose, out through your mouth" 
 // "feel free to slowly lean more and more into the stretch"
+// add home button
 
 // maak dictionary van alle joint colliders om if all colliders collided -> "hold that pose!!"
 
@@ -63,7 +62,7 @@ public class ButtonPressing : MonoBehaviour
             sprite = other.gameObject.GetComponent<SpriteRenderer>();
             sprite.color = new Color (0, 1, 0, 1); 
             // AllJointsCollided = true
-            // BodySourceView.jointCollided[currentJoint] = true;
+            // BodySourceView.jointCollided[other.gameObject.name] = true;
             // foreach in jointcollided[]
             //      if jointcollided[i] == true {do nothing}
             //      if jointcollided[i] == false {AllJointsCollided = false}
