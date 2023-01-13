@@ -20,10 +20,10 @@ public class ButtonPressing : MonoBehaviour
 
 // ToDo's:
 
-// wacht voor 15 s: create button "continue" -> 2e lateral stretch scene maar dan mirrored
 // render skeleton in front of the stretch
 // add color to sprite (@stretching musle)
-// add home button
+// add body parts button @stretch exercise scene
+// add "next stretch" button @completion current exercise
 
 // maak dictionary van alle joint colliders om if all colliders collided -> "hold that pose!!"
 
@@ -67,6 +67,7 @@ public class ButtonPressing : MonoBehaviour
                     GameObject doneStretching = GameObject.FindWithTag("GoodJob");
                     // Debug.Log(doneStretching.name);
                     doneStretching.transform.GetChild(0).gameObject.SetActive(true);
+                    // add "next stretch" button @completion current exercise
                     
                     doneStretch += 1;
                 }
