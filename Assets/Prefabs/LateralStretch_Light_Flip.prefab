@@ -7,13 +7,73 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 122227887710867895, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: uparml
+      objectReference: {fileID: 0}
+    - target: {fileID: 136799736585197267, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: AnkleRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 149964869154100952, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: HandTipRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 981663537945136507, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: ThumbRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100604868389452921, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: uplegl
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117717787909762239, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: handr
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523004693210175943, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: HipRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950803292993117080, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: lowarmr
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037215435654684776, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: lowarml
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262168935718426313, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: AnkleLeft
+      objectReference: {fileID: 0}
     - target: {fileID: 2312109050010228521, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
       propertyPath: m_Name
       value: LateralStretch_Light_Flip
       objectReference: {fileID: 0}
+    - target: {fileID: 2354357553480021713, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: lowlegr
+      objectReference: {fileID: 0}
+    - target: {fileID: 2858006990655283520, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: ShoulderRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3362986777204476581, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: ThumbLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387460567507975417, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: WristRight
+      objectReference: {fileID: 0}
     - target: {fileID: 3521352265922776906, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521352265922776906, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3521352265922776906, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54,6 +114,70 @@ PrefabInstance:
     - target: {fileID: 3521352265922776906, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650019524179856852, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: FootLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431250094913443672, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: WristLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561502296206434865, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: ElbowRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768832532839315545, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: HipLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890686420588081131, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: uparmr
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029087101463553685, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: ShoulderLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6286770901393493893, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: FootRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057478308828867312, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: handl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543879785532967853, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: HandTipLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806109577037933293, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: uplegr
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359135650537951715, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: footl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510243025226258001, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: footr
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523870305705506520, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: ElbowLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649813112075059490, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: KneeRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775290251923268358, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: lowlegl
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218327230743449789, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}
+      propertyPath: m_Name
+      value: KneeLeft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b31eebdf679ef5545bef31e0256d9725, type: 3}

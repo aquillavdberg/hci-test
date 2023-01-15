@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LateralStretch
   - GoodJob
+  - LateralStretchFlip
+  - StretchContainer
   layers:
   - Default
   - TransparentFX
