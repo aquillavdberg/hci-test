@@ -52,8 +52,11 @@ public class ButtonPressing : MonoBehaviour
                 
                 if (doneMirror == 0)
                 {
-                    GameObject LateralStretch = GameObject.FindWithTag("LateralStretch");
-                    LateralStretch.transform.localScale = new Vector3(-3, 3, 2);
+                    GameObject LateralStretch = GameObject.FindWithTag("StretchContainer");
+                    LateralStretch.transform.GetChild(0).gameObject.SetActive(false);
+                    // GameObject LateralStretchFlip = GameObject.FindWithTag("LateralStretchFlip");
+                    LateralStretch.transform.GetChild(1).gameObject.SetActive(true);
+                    // LateralStretch.transform.localScale = new Vector3(-3, 3, 2);
                     doneMirror += 1;
                 }
             }
@@ -91,7 +94,7 @@ public class ButtonPressing : MonoBehaviour
         if (scene.name != "LateralStretch" && scene.name != "LateralStretch2")
         {
             SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(1000);
         }
         else
         {
@@ -112,13 +115,13 @@ public class ButtonPressing : MonoBehaviour
             if (this.gameObject.name == "Torso") 
             {
                 SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(1000);
             }
 
             if (this.gameObject.name == "LateralStretch2")
             {
                 SceneManager.LoadScene(this.gameObject.name, LoadSceneMode.Single);
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(1000);
             }
         }
         
